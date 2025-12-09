@@ -1,5 +1,5 @@
-resource "aws_eks_cluster" "my_cluster" {
-  name     = "my-cluster"
+resource "aws_eks_cluster" "my_cluster_1" {
+  name     = "my_cluster_1"
   role_arn = "arn:aws:iam::700562448157:role/admin1"  # Replace with your IAM role ARN
 
   vpc_config {
@@ -13,7 +13,7 @@ resource "aws_eks_cluster" "my_cluster" {
 }
 
 resource "aws_eks_node_group" "my_node_group" {
-  cluster_name    = aws_eks_cluster.my_cluster.name
+  cluster_name    = aws_eks_cluster.my_cluster_1.name
   node_group_name = "my-node-group"
   node_role_arn   = "arn:aws:iam::700562448157:role/admin1"  # Replace with your IAM role ARN
   subnet_ids         = ["subnet-007b090e1ee8e4401","subnet-0ab11edff943d4c20"]      # Replace with your subnet IDs
